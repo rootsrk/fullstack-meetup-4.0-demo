@@ -3,10 +3,21 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import { useCustomState } from "./hooks/useCustomState";
+import { useCustomEffect } from "./hooks/useCustomEffect";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [customCount, setCustomCount] = useCustomState(10);
+  const [customCount, setCustomCount] = useCustomState(0);
+
+  // Usage example of the custom effect hook.
+  useCustomEffect(() => {
+    console.log("Custom effect has run");
+
+    // Optional cleanup function returned by the effect.
+    return () => {
+      console.log("Cleanup before the next effect or on unmount");
+    };
+  }, [count]);
 
   return (
     <>
