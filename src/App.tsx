@@ -31,20 +31,22 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
+        <p>
+          A button with its state controlled using React's <code>useState</code>{" "}
+          hook
+        </p>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
       <div className="card">
+        <p>
+          A button with its state controlled using <code>useCustomState</code>{" "}
+          hook
+        </p>
         <button onClick={() => setCustomCount((c) => c + 1)}>
           count with custom useState hook is {customCount}
         </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
